@@ -1,8 +1,6 @@
 import { EditorState, Modifier } from 'draft-js'
-import {
-  myKeyBindingFn,
-  findInlineTeXEntities,
-} from './utils'
+
+import { myKeyBindingFn, findInlineTeXEntities } from './utils'
 import loadMathJax from './mathjax/loadMathJax'
 import initCompletion from './mathjax/completion'
 import insertTeX from './modifiers/insertTeX'
@@ -131,7 +129,7 @@ const createMathjaxPlugin = (config = {}) => {
       store.getReadOnly = getReadOnly
       store.setReadOnly = setReadOnly
       store.getEditorRef = getEditorRef
-      store.completion = store.completion(getEditorState())
+      // store.completion = store.completion(getEditorState())
       // store.completion.mostUsedTeXCommands =
       //   getInitialMostUsedTeXCmds(getEditorState())
     },

@@ -56,10 +56,11 @@ export default class InlineTeX extends Component {
         const { teX, displaystyle } = this.state
         const { entityKey, offsetKey, children } = this.props
         const contentState = this.getCurrentEditorContent()
-        store.completion.updateMostUsedTeXCmds(
-          teX,
-          contentState.getEntity(entityKey).getData().teX,
-        )
+        // Remove Store Completion
+        // store.completion.updateMostUsedTeXCmds(
+        //   teX,
+        //   contentState.getEntity(entityKey).getData().teX,
+        // )
         finishEdit(store)(
           ...saveTeX({
             after,
@@ -176,4 +177,3 @@ export default class InlineTeX extends Component {
     )
   }
 }
-
